@@ -1,0 +1,53 @@
+{
+	"info": {
+		"name": "Recuperacion U2 - API Biblioteca",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autores - Listar",
+			"request": {
+				"method": "GET",
+				"url": { "raw": "http://127.0.0.1:8000/api/autores", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "autores"] }
+			}
+		},
+		{
+			"name": "Autores - Crear",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Julio Cortázar\",\n    \"nacionalidad\": \"Argentina\"\n}"
+				},
+				"url": { "raw": "http://127.0.0.1:8000/api/autores", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "autores"] }
+			}
+		},
+		{
+			"name": "Autor con Libros (Eager Loading)",
+			"request": {
+				"method": "GET",
+				"url": { "raw": "http://127.0.0.1:8000/api/autores/1/libros", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "autores", "1", "libros"] }
+			}
+		},
+		{
+			"name": "Libros - Listar",
+			"request": {
+				"method": "GET",
+				"url": { "raw": "http://127.0.0.1:8000/api/libros", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "libros"] }
+			}
+		},
+		{
+			"name": "Libros - Crear",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"autor_id\": 1,\n    \"titulo\": \"Rayuela\",\n    \"isbn\": \"9788437604572\",\n    \"precio\": 45.50\n}"
+				},
+				"url": { "raw": "http://127.0.0.1:8000/api/libros", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "libros"] }
+			}
+		}
+	]
+}
